@@ -243,5 +243,13 @@ h1{
     h1{
         font-size: 50px;
     }
+
+    .list-items {
+        padding: 5px;
+    }
   
+    .my-item {
+        font-size: 12px;
+    
+    }
 }
