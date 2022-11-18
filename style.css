@@ -1,0 +1,127 @@
+:root {
+    --primary-color: rgb(138, 154, 91);
+    --secondary-color: rgb(234, 248, 200);
+    --background-color:  rgb(255, 255, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 700px;
+
+}
+
+input, button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+form {
+    background: var(--primary-color);
+    padding: 90px 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid var(--primary-color);
+    border-radius: 50px;
+    box-shadow: 0 5px 7px var(--primary-color);
+    animation: show-up 2s,
+               opacity 8s linear 3s infinite;
+}
+
+@keyframes show-up {
+    0% {opacity: 0;
+    transform: translateY(-50%);}
+    100% {opacity: 1;
+    transform: translateY(0%);}
+}
+
+@keyframes opacity {
+    0% {opacity: 1;}
+    20% {opacity: 0.98;}
+    50% {opacity: 0.7;}
+    80% {opacity: 0.9;}
+    100% {opacity: 1;}
+}
+
+h1{
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+.input-container{
+    margin-top: 20px;
+    width: 60%;
+    display: flex;
+    justify-items: center;
+
+}
+
+.password-container{
+    margin-left: 10px;
+    padding: 10px;
+    height: 30px;
+    flex: 1;
+    background: var(--background-color);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.password-container:hover, .password-container:focus{
+    border: 3px solid var(--secondary-color);
+    box-shadow: 0 1px 3px var(--secondary-color);
+}
+
+span{
+    color: var(--background-color);
+    font-weight: 600;
+}
+
+.login-btn{
+    background: var(--secondary-color);
+    width: 40%;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 50px;
+    padding: 10px 50px;
+    transition: 0.3s;
+}
+.login-btn:hover{
+    opacity: 0.9;
+    animation: wiggle 1s linear infinite;
+}
+
+@keyframes wiggle {
+    0%, 7% {
+        transform: rotateZ(0);
+    }
+    15% {
+        transform: rotateZ(-5deg);
+    }
+    20% {
+        transform: rotateZ(5deg);
+    }
+    35%{
+        transform: rotateZ(-5deg);
+    }
+    40%, 100%{
+        transform: rotateZ(0);
+    }
+    
+}
