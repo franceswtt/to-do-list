@@ -111,7 +111,15 @@ function editItem(e) {
 
     console.log(selectedItem)
 
-    selectedInput.addEventListener("blur", (e) => {
+    selectedInput.addEventListener("blur", (doneEditing))
+    selectedInput.addEventListener("keypress", (e) => {
+        if (e.keyCode === 13){
+            doneEditing()
+        }
+    })
+
+
+    function doneEditing(){
         selectedItem.classList.remove("selected")
         selectedInput.setAttribute("readonly", "readonly")
         const value = selectedInput.value
@@ -119,7 +127,7 @@ function editItem(e) {
         
         editLocalStorage(id, value, status)
         displayAlert(`LIST ITEM UPDATED`, "succeeded-alert")
-    })
+    }
 }
 
 function completedItem(e) {
